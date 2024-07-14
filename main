@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class CurrencyConverter {
+
+    // Tasas de cambio 
+    private static final double USD_TO_EUR = 0.85;
+    private static final double USD_TO_JPY = 110.0;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Bienvenido al conversor de monedas");
+
+        System.out.print("Introduce la cantidad en USD: ");
+        double amountInUSD = scanner.nextDouble();
+
+        double amountInEUR = convertUSDToEUR(amountInUSD);
+        double amountInJPY = convertUSDToJPY(amountInUSD);
+
+        System.out.printf("La cantidad en EUR es: %.2f%n", amountInEUR);
+        System.out.printf("La cantidad en JPY es: %.2f%n", amountInJPY);
+
+        scanner.close();
+    }
+
+    public static double convertUSDToEUR(double amountInUSD) {
+        return amountInUSD * USD_TO_EUR;
+    }
+
+    public static double convertUSDToJPY(double amountInUSD) {
+        return amountInUSD * USD_TO_JPY;
+    }
+}
